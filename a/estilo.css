@@ -1,0 +1,367 @@
+/* General */
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  color: #f0f0f0;
+  background-color: #121212; /* Fondo oscuro para el estilo cyberpunk */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Fondo oscuro con algo de transparencia */
+  padding: 20px 50px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Sombra más prominente */
+}
+
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #00f3ff; /* Azul neón */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.7), 0 0 12px rgba(0, 243, 255, 0.5); /* Efecto de neón */
+  text-align: center;
+}
+
+nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff007f; /* Rosa neón */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ff007f;
+}
+
+nav ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Item */
+.item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  border: 3px solid #444;
+  margin-bottom: 2%;
+  background-color: #222; /* Fondo oscuro para los items */
+  padding: 2%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.1);
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2); /* Sombra de neón */
+}
+
+.foto .texto {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #ff007f; /* Efecto de neón */
+}
+
+/* Productos */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+/* Pagina Ampliar.php */
+.productos_amp {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.producto_amp {
+  width: 60%;
+  display: flex;
+  margin: 20px auto;
+  border: 1px solid #444;
+  border-radius: 15px;
+  background-color: #222;
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.2);
+  padding: 20px;
+}
+
+.foto_amp {
+  width: 30%;
+}
+
+.foto_amp img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.texto_amp {
+  width: 40%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: #f0f0f0;
+}
+
+.texto_amp p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.boton {
+  padding: 12px 25px;
+  background-color: #ff007f; /* Rosa neón */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.boton:hover {
+  background-color: #ff3399;
+  transform: scale(1.1);
+}
+
+.boton:active {
+  background-color: #ff007f;
+}
+
+/* Formularios */
+.formCod,
+.formDesc,
+.formMarca,
+.formPrecio {
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #333;
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.3);
+  border: 1px solid #444;
+  display: none;
+}
+
+.formCod {
+  display: flex;
+}
+
+select {
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+  font-size: 16px;
+  background-color: #222;
+  color: #fff;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  border-color: #ff007f;
+  outline: none;
+}
+
+/* Formulario de búsqueda */
+.formulario {
+  width: 40%;
+  padding: 20px;
+  margin: 50px auto;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 50px;
+}
+
+.formulario:hover {
+  transform: scale(1.05);
+}
+
+.formulario input,
+.formulario select {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+  font-size: 16px;
+  background-color: #222;
+  color: #fff;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  border-color: #ff007f;
+  outline: none;
+}
+
+/* Botones */
+button {
+  padding: 12px 25px;
+  background-color: #00f3ff; /* Azul neón */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #00c2cc;
+}
+
+button:active {
+  background-color: #00f3ff;
+}
+
+/* Estilo para el contenedor del formulario */
+.nuevo-formulario {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  display: block; /* Aseguramos que el formulario esté visible inicialmente */
+}
+
+/* Estilo de los elementos del formulario */
+.nuevo-formulario p {
+  margin-bottom: 15px;
+}
+
+.nuevo-formulario input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo del botón */
+.nuevo-formulario button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nuevo-formulario button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para ocultar el formulario */
+.hidden {
+  display: none !important;
+}
+.formularioo {
+  width: 40%;
+  padding: 20px;
+  margin: 50px auto;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+.pepe {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 34px;
+  margin-top: 80px;
+  margin-bottom: -30px;
+}
+#codigo {
+  margin-bottom: 20px;
+}
+.pepe2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton3 {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+.boton4 {
+  margin-top: 20px;
+}
